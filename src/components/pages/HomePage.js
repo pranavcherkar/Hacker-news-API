@@ -15,15 +15,11 @@ const HomePage = () => {
     left: "50%",
     transform: "translate(-50%, -50%)",
   };
-  const inputStyle = {
-    width: "200px",
-    height: "30px",
-  };
+
   useEffect(() => {
     setLoading(true);
     const getArticles = async () => {
       try {
-        const { onSearch } = query;
         const res = await axios.get(
           `https://hn.algolia.com/api/v1/search?query=${query}`
         );
@@ -57,18 +53,18 @@ const HomePage = () => {
         </div>
       ) : (
         items.map(({ author, created_at, title, url, objectID }) => (
-          <Link to={`/details/${objectID}`}>
-            <div className="card" key={objectID}>
+          <div className="card" key={objectID}>
+            <Link className="text-decoration-none" to={`/details/${objectID}`}>
               <h3>{title}</h3>
               <p>By {author}</p>
-              <p>{objectID}</p>
-              <p>
+
+              <p className="card-date">
                 created at
-                {format(new Date(created_at), "dd MMM yyy")}
+                {format(new Date(created_at), " dd MMM yyy")}
               </p>
-              <Link to={url}>Read More</Link>
-            </div>
-          </Link>
+            </Link>
+            <Link to={url}>Read More</Link>
+          </div>
         ))
       )}
     </div>
