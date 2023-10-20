@@ -54,9 +54,9 @@ const Headers = ({ onSearch }) => {
     return celsiusTemp.toFixed(0).padStart(2, "0");
   };
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg navbar-dark  bg-dark text-light">
       <div className="container-fluid">
-        <Link className="navbar-brand" href="#">
+        <Link className="navbar-brand text-light" href="#">
           Great News
         </Link>
         <button
@@ -75,7 +75,7 @@ const Headers = ({ onSearch }) => {
             <li className="nav-item">
               <Link
                 to="/"
-                className="nav-link active"
+                className="nav-link text-light active "
                 aria-current="page"
                 href="#"
               >

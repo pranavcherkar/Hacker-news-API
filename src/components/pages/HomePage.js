@@ -34,7 +34,7 @@ const HomePage = () => {
   }, [query]);
   return (
     <div className="card-main">
-      <form className="d-flex mt-2" role="search">
+      {/* <form className="d-flex mb-2 mt-2" role="search">
         <input
           className="form-control me-2"
           type="search"
@@ -46,24 +46,60 @@ const HomePage = () => {
         <button className="btn btn-outline-success " type="button">
           Search
         </button>
-      </form>
+      </form> */}
+      <div className="row justify-content-center mt-2">
+        <div className="col-12 col-md-10 col-lg-8">
+          <form className="card card-sm">
+            <div className="card-body row no-gutters align-items-center">
+              <div className="col-auto">
+                <i className="fas fa-search h4 text-body" />
+              </div>
+              {/*end of col*/}
+              <div className="col">
+                <input
+                  className="form-control form-control-lg form-control-borderless"
+                  type="search"
+                  placeholder="Search topics or keywords"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+              </div>
+              {/*end of col*/}
+              <div className="col-auto">
+                <button className="btn btn-lg btn-dark" type="submit">
+                  Search
+                </button>
+              </div>
+              {/*end of col*/}
+            </div>
+          </form>
+        </div>
+        {/*end of col*/}
+      </div>
+
       {loading ? (
         <div style={style}>
           <TailSpin height="80" color="green" />
         </div>
       ) : (
         items.map(({ author, created_at, title, url, objectID }) => (
-          <div className="card" key={objectID}>
+          <div className="card-news" key={objectID}>
             <Link className="text-decoration-none" to={`/details/${objectID}`}>
               <h3>{title}</h3>
-              <p>By {author}</p>
-
+              <div className="card-author">
+                <p>By {author}</p>
+              </div>
+            </Link>
+            <div className="card-end">
               <p className="card-date">
                 created at
                 {format(new Date(created_at), " dd MMM yyy")}
               </p>
-            </Link>
-            <Link to={url}>Read More</Link>
+
+              <Link to={url}>
+                <div className="link-read">source</div>
+              </Link>
+            </div>
           </div>
         ))
       )}

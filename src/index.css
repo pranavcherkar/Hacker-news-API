@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing:border-box;
-    
+    font-family: "Times New Roman", Times, serif;
   }
 .datecss{
   margin-right: 20px;
@@ -16,7 +16,7 @@
 }
 
 /* main */
-.card {
+.card-news {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -25,15 +25,15 @@
   padding: 10px;
   text-align: center;
   margin-top: 30px;
-  
+  box-shadow: -3px 6px 5px 0px rgba(176,164,176,1);
+  transition: all .3s ease-in-out;
   
 }
-.card:hover{
-  transform: translateY(-10px);
-  animation-duration: 20ms;
+.card-news:hover{
+  box-shadow: -3px 18px 20px 0px rgba(99,89,99,1);
 }
 /* Title styles */
-.card h3 {
+.card-news h3 {
   font-size: 20px;
   margin: 0;
   color: #333;
@@ -43,7 +43,7 @@
   font-size: 20px;
 }
 /* Description styles */
-.card p {
+.card-news p {
   font-size: 14px;
   color: #666;
   margin: 10px 0;
@@ -51,7 +51,7 @@
 }
 
 /* Link styles */
-.card a {
+.card-news a {
   display: block;
   text-decoration: none;
   padding: 8px 0;
@@ -60,9 +60,21 @@
   color: #666;
   
 }
-
+.card-end{
+  display: flex;
+  justify-content:space-between
+}
+.card-author{
+  display: flex;
+  justify-content: flex-end;
+  
+}
 .link-read{
-  margin-left: 20px;
+  color: blue;
+}
+
+.link-read:hover{
+  color: rgb(164, 164, 248);
 }
 /* search bar */
 .search-bar{
@@ -81,8 +93,8 @@
   height: 30px;
 }
 .comment{
-  background-color: #cdbdbd;
-  box-shadow: #333;
+  background-color: #d3cdcd;
+  box-shadow: #a59e9e;
   list-style-type:none;
  
 }
@@ -99,4 +111,12 @@
   padding: 5px;
   margin: 5px;
   box-shadow: #000000;
+}
+.container-details{
+  display: block;
+}
+.container-main h1{
+  display: flex;
+  justify-content: center;
+  
 }
