@@ -96,7 +96,6 @@
   background-color: #d3cdcd;
   box-shadow: #a59e9e;
   list-style-type:none;
- 
 }
 .top-level-comment {
   /* Add your styles for top-level comments here */
@@ -107,10 +106,10 @@
 
 .child-comment {
   /* Add your styles for child comments here */
-  background-color: #ffffff;
-  padding: 5px;
-  margin: 5px;
-  box-shadow: #000000;
+  background-color: #ddfcf3;
+  
+  margin: 2px;
+  box-shadow: hsl(0, 0%, 100%);
 }
 .container-details{
   display: block;
@@ -118,5 +117,38 @@
 .container-main h1{
   display: flex;
   justify-content: center;
+}
+.com-main h6{
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
+}
+.comments-div{
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+ol, ul {
+  padding: -4px;
+}
+@media only screen and (max-width: 400px) {
+  .comment{
+    background-color: #ffffff;
+    list-style-type:none;
+  }
+  .com-main{
+    width: 400px
+  }
+  .child-comment {
+    /* Add your styles for child comments here */
+    background-color: #ddfcf3;
+    max-width: 350px;
+    box-shadow: hsl(0, 0%, 100%);
+  }
+  .comments-div {
+    display: block;
+    
+}
 }

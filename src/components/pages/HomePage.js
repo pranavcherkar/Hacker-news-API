@@ -82,10 +82,11 @@ const HomePage = () => {
           <TailSpin height="80" color="green" />
         </div>
       ) : (
-        items.map(({ author, created_at, title, url, objectID }) => (
+        items.map(({ author, created_at, title, url, objectID, value }) => (
           <div className="card-news" key={objectID}>
             <Link className="text-decoration-none" to={`/details/${objectID}`}>
               <h3>{title}</h3>
+              <p>{value}</p>
               <div className="card-author">
                 <p>By {author}</p>
               </div>

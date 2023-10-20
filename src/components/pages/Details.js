@@ -35,14 +35,14 @@ const Details = () => {
       <div className="container-details">
         <div className="container-main">
           <h1>{items.title}</h1>
-          <p>{items.points}</p>
+          <h2>Points: {items.points}</h2>
           <p>{items.text}</p>
           <Link to={items.url}>
             <h4>Source</h4>
           </Link>
         </div>
-        <div className="mt-3 p-4">
-          <h6>Comments:</h6>
+        <div className="mt-3 com-main p-2">
+          <h6>COMMENTS:</h6>
           {loading ? (
             <div style={style}>
               <TailSpin height="80" color="green" />
