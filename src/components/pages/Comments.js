@@ -13,7 +13,10 @@ const Comments = ({ comment, isTopLevel }) => {
           <strong>-{comment.author}:</strong> {textToShow}
           {comment.text.length > 50 && (
             <p
-              style={{ color: "blue", borderColor: "black" }}
+              style={{
+                color: "blue",
+                borderColor: "black",
+              }}
               onClick={toggleReadMore}
             >
               {showFullText ? "Read less" : "Read more"}

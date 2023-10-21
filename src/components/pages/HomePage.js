@@ -59,7 +59,7 @@ const HomePage = () => {
                 <input
                   className="form-control form-control-lg form-control-borderless"
                   type="search"
-                  placeholder="Search topics or keywords"
+                  placeholder="Search topics"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                 />

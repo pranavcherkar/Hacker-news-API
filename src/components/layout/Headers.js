@@ -57,7 +57,7 @@ const Headers = ({ onSearch }) => {
     <nav className="navbar navbar-expand-lg navbar-dark  bg-dark text-light">
       <div className="container-fluid">
         <Link className="navbar-brand text-light" href="#">
-          Great News
+          Hacker News
         </Link>
         <button
           className="navbar-toggler"
