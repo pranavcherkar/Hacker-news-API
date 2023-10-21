@@ -15,7 +15,7 @@ const HomePage = () => {
     left: "50%",
     transform: "translate(-50%, -50%)",
   };
-
+  //getting data through query
   useEffect(() => {
     setLoading(true);
     const getArticles = async () => {
@@ -34,19 +34,7 @@ const HomePage = () => {
   }, [query]);
   return (
     <div className="card-main">
-      {/* <form className="d-flex mb-2 mt-2" role="search">
-        <input
-          className="form-control me-2"
-          type="search"
-          placeholder="Search"
-          // style={inputStyle}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button className="btn btn-outline-success " type="button">
-          Search
-        </button>
-      </form> */}
+      {/* Form  */}
       <div className="row justify-content-center mt-2">
         <div className="col-12 col-md-10 col-lg-8">
           <form className="card card-sm">
@@ -54,7 +42,6 @@ const HomePage = () => {
               <div className="col-auto">
                 <i className="fas fa-search h4 text-body" />
               </div>
-              {/*end of col*/}
               <div className="col">
                 <input
                   className="form-control form-control-lg form-control-borderless"
@@ -64,17 +51,14 @@ const HomePage = () => {
                   onChange={(e) => setQuery(e.target.value)}
                 />
               </div>
-              {/*end of col*/}
               <div className="col-auto">
                 <button className="btn btn-lg btn-dark" type="submit">
                   Search
                 </button>
               </div>
-              {/*end of col*/}
             </div>
           </form>
         </div>
-        {/*end of col*/}
       </div>
 
       {loading ? (
@@ -84,6 +68,7 @@ const HomePage = () => {
       ) : (
         items.map(({ author, created_at, title, url, objectID, value }) => (
           <div className="card-news" key={objectID}>
+            {/* Card details */}
             <Link className="text-decoration-none" to={`/details/${objectID}`}>
               <h3>{title}</h3>
               <p>{value}</p>

@@ -13,6 +13,7 @@ const Details = () => {
     left: "50%",
     transform: "translate(-50%, -50%)",
   };
+  //getting item details
   useEffect(() => {
     setLoading(true);
     const getArticles = async () => {
@@ -34,6 +35,7 @@ const Details = () => {
     <>
       <div className="container-details">
         <div className="container-main">
+          {/* Main details */}
           <h1>{items.title}</h1>
           <h2>Points: {items.points}</h2>
           <p>{items.text}</p>
@@ -42,6 +44,7 @@ const Details = () => {
           </Link>
         </div>
         <div className="mt-3 com-main p-2">
+          {/* Comments */}
           <h6>COMMENTS:</h6>
           {loading ? (
             <div style={style}>
