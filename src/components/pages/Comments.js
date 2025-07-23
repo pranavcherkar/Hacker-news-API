@@ -7,34 +7,39 @@ const Comments = ({ comment, isTopLevel }) => {
 
   const textToShow = showFullText
     ? comment.text
-    : comment.text.slice(0, 100); // Show more preview
+    : comment.text.slice(0, 100);
 
-  const toggleReadMore = () => {
-    setShowFullText((prev) => !prev);
-  };
+  const toggleReadMore = () => setShowFullText((prev) => !prev);
 
   return (
     <li
-      className={`border rounded-lg p-4 mb-3 ${
-        isTopLevel ? "bg-white shadow-md" : "bg-gray-50 ml-6"
+      className={`relative my-4 p-4 rounded-xl transition-all duration-300 ${
+        isTopLevel
+          ? "bg-gradient-to-r from-yellow-50 to-orange-100 shadow-md"
+          : "bg-gradient-to-r from-purple-50 to-indigo-100 ml-6"
       }`}
     >
-      <p className="mb-2">
-        <span className="font-semibold text-blue-700">- {comment.author}</span>
-        <span className="ml-2 text-gray-800">{textToShow}</span>
+      {/* Author */}
+      <p className="mb-2 text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
+        @{comment.author}
       </p>
 
-      {comment.text.length > 100 && (
-        <button
-          onClick={toggleReadMore}
-          className="text-sm text-blue-600 hover:underline"
-        >
-          {showFullText ? "Read less" : "Read more"}
-        </button>
-      )}
+      {/* Comment Text */}
+      <p className="text-gray-800 whitespace-pre-line leading-relaxed">
+        {textToShow}
+        {comment.text.length > 100 && (
+          <button
+            onClick={toggleReadMore}
+            className="ml-2 text-blue-600 hover:underline text-sm"
+          >
+            {showFullText ? "Read less" : "...Read more"}
+          </button>
+        )}
+      </p>
 
+      {/* Nested Comments */}
       {comment.children && comment.children.length > 0 && (
-        <ul className="mt-3">
+        <ul className="mt-4 border-l-2 border-indigo-300 pl-4">
           {comment.children.map((childComment) => (
             <Comments
               key={childComment.id}
